@@ -8,7 +8,7 @@
 balance = 0
 
 while True:
-    print("\nBanking Options:")
+    print("Banking Options:")
     print("1. Deposit")
     print("2. Withdraw")
     print("3. Check Balance")
@@ -17,13 +17,24 @@ while True:
     choice = input("Enter your choice (1-4): ")
 
     if choice == '1':
-        # papildini kodu šeit
+        print("How much do you want to deposit?")
+        deposit = int(input())
+        balance += deposit
+        print("Your balance now is = " + str(balance))
         pass
     elif choice == '2':
-        # papildini kodu šeit
+        print("How much do you want to withdraw?")
+        withdraw = int(input())
+        if balance < withdraw:
+            print("Unfortunatley you can't withdraw money from your bank account, because you don't have enough money.")
+            pass
+        elif balance > withdraw:
+            balance -= withdraw
+            print("Withdraw = " + str(withdraw))
+        print("Your balance is = " + str(balance))
         pass
     elif choice == '3':
-        # papildini kodu šeit
+        print("Your balance is = " + str(balance))
         pass
     elif choice == '4':
         print("Exiting the banking system. Thank you!")
